@@ -1,0 +1,64 @@
+.ansbar{
+	padding-top: 20px;
+	padding-bottom: 30px;
+	height: auto;
+}
+.questionbar{
+	width: 80%;
+	height: auto;
+	margin-left: 10%;
+	margin-bottom: 20px;
+	color: #FFF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.questionbody{
+	height: auto;
+	line-height: 40px;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+
+.questionbar form{
+	height: auto;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 2px;
+}
+.remove{
+	width: 80px;
+	height: 30px;
+	background-color: #F0AD4E;
+	float: right;
+	border-radius: 5px;
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	letter-spacing: 2px;
+	font-weight: bolder;
+	margin-top: 10px;
+}
+.remove:hover{
+	background-color: #ec971f;
+}
+.submit{
+	border: none;
+	border-radius: 5px;
+	background-color:#337ab7;
+	font-size: 18px;
+	float: right;
+}
+@media (max-width: 768px) {
+	.questionbody{
+		font-size: 20px;
+	}
+	.questionbar{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.questionbar form{
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,21 @@
+$(document).ready(function(){
+	$(".remove").click(function(){
+		var id=$(this).attr("id");
+		console.log(id);
+		$.ajax({
+			type:'POST',
+			asyn:false,
+			url:"remove.php",
+			data:{
+				r_id:id,
+			},
+			datatype:'text/html',
+			success:function(msg){
+				if(msg=="success"){
+					$("#"+id).parent().addClass("hidden");
+				}
+			}
+		})
+	}	
+	)
+})

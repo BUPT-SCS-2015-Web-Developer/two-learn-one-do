@@ -1,0 +1,58 @@
+.ansbar{
+	padding-top: 20px;
+	height: auto;
+}
+.questionbar{
+	width: 80%;
+	height: auto;
+	margin-left: 10%;
+	margin-bottom: 20px;
+	color: #FFF;
+	border: 1px solid #FFF;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.questionbody{
+	height: auto;
+	line-height: 40px;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+.questionchoice{
+	height: auto;
+	font-size: 18px;
+	line-height: 30px;
+}
+.correctanswer{
+	font-size: 18px;
+	float: left;
+	margin-top: 10px;
+}
+.remove{
+	width: 80px;
+	height: 30px;
+	background-color: #F0AD4E;
+	float: right;
+	border-radius: 5px;
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	letter-spacing: 2px;
+	font-weight: bolder;
+	margin-top: 10px;
+}
+.remove:hover{
+	background-color: #ec971f;
+}
+@media (max-width: 768px) {
+	.questionbody{
+		font-size: 16px;
+	}
+	
+	.appendix{
+		height:46px;
+	}
+}

@@ -1,0 +1,19 @@
+
+.ansbar2{
+	height:1400px;
+	padding-top: 20px;
+	background-color: rgba(0,0,0,0.6);
+}
+.result{
+	height: 150px;
+	line-height: 30px;
+	font-size: 28px;
+	color: #FFF;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+.result{
+	font-size: 18px !important;
+}
+}

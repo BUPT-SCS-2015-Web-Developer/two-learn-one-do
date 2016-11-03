@@ -1,0 +1,78 @@
+body,html{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+.wholebar{
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	background: url("../img/login.jpg");
+	background-position: center center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+	.wholebar{
+		background: url("../img/loginphone.jpg");
+		background-size:auto 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+}
+.line{
+	width: 50%;
+	height: 60px;
+	margin-left: 25%;
+	margin-top: 650px;
+  position: fixed;
+}
+.line-child{
+	width: 60%;
+	height: 100%;
+	margin-left: 20%;
+	cursor: pointer;
+	background-color: #FFF;
+	border-radius: 15px;
+	text-align: center;
+	line-height: 60px;
+	letter-spacing: 4px;
+	font-size: 24px;
+	font-weight: bold;
+	float: left;
+}
+.startanswer{
+	background-color: #9932CC;
+	color: #FFF;
+}
+.startanswer:hover{
+	background-color: #FFF;
+	color: #9932CC;
+}
+.personalcenter{
+	background-color: #ADFF2F;
+	color: #FFF;
+}
+.personalcenter:hover{
+	background-color: #FFF;
+	color: #ADFF2F;
+}
+@media (max-width: 768px) {
+  .line{
+    width: 50%;
+    height: 50px;
+    margin-left: 25%;
+    margin-top: 400px;
+    position: fixed;
+  }
+  .line-child{
+    width: 100%; 
+    margin:0; 
+    line-height: 50px;
+    font-size: 20px; 
+  }
+}

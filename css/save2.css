@@ -1,0 +1,13 @@
+
+.ansbar2{
+	height:80px;
+	padding-top: 20px;
+	background-color: rgba(0,0,0,0.6);
+}
+.result{
+	height: 30px;
+	line-height: 30px;
+	font-size: 28px;
+	color: #FFF;
+	text-align: center;
+}
