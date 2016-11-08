@@ -179,7 +179,7 @@ function confirm(step_id){
 
 	if(finished<expected){
 		console.log("nonono");
-		alert("Please finish the current learning step!");
+		alert("请完成当前阶段的学习任务！");
 	}else if(step_id==$(".listindex").length){
 		alert("你已经完成全部的学习阶段");
 		location.href="self-learn.php";

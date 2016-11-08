@@ -221,3 +221,20 @@ ul.baraja-container{
 .learn-content img,.learn-content audio,.learn-content video{
 	width: 100%; margin: 10px 0;
 }
+
+@media (max-width: 768px) {
+	.well-com,.step-img{
+		display:none;
+	}
+	#header{
+	width: 100%; background: url("../img/bg2.jpg") no-repeat; background-size: 100% auto;  
+}
+}
+
+.well-com{
+	display:none;
+}
+	
+	#header{
+	width: 100%; background: url("../img/bg2.jpg") no-repeat; background-size: 100% auto;  
+	}
