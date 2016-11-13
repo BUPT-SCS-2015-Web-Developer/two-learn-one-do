@@ -69,13 +69,20 @@ a:hover{
 .main{
 	width: 100%; height: 800px;  background: url("../img/bg2.jpg") ; background-size: 100% auto; padding-top: 80px;
 }
-.baraja-demo{
-	width: 360px; margin: 0px auto; z-index: 100;
+.branch-demo{
+	margin: 50px auto; z-index: 100;
 }
-ul.baraja-container{
-	width: 360px; height: 450px; border-color: #7F8C8D; color: #7F8C8D;
+.scrollbox li{
+	float: left;
+	display: block;
+	width: 400px;
+	height: 450px;
+	margin: 0 50px;
 }
-.baraja-demo ul.baraja-container li {
+.scrollbox{
+	width: 1800px; margin: 0 auto;
+}
+.scrollbox li {
 	border-radius: 10px;
 	padding: 5px;
 	box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
@@ -85,18 +92,17 @@ ul.baraja-container{
 	-ms-user-select: none;
 	user-select: none;
 	z-index: 100;
+	background-color: #FFF;
 }
-.baraja-demo ul.baraja-container li h4{
+.scrollbox li h4{
 	font-size: 24px;
 }
-.baraja-demo ul.baraja-container li p{
+.scrollbox li p{
 	font-size: 16px;
 	line-height: 2;
 }
-.baraja-demo li img {
-	display: block;
-	margin: 0 auto;
-	width: 100%;
+.scrollbox li img {
+
 	border-radius: 10px 10px 0 0;
 }
 .button-line{
@@ -122,24 +128,33 @@ ul.baraja-container{
 	border-radius: 3px; padding: 10px 10px; text-align: center; cursor: pointer; font-weight: 800; font-size: 20px; line-height: 20px; z-index: 101;
 }
 .finished{
-	position: absolute; top: 0;
+	margin-top: -400px;
 }
-@media(max-width: 1200px){
+@media(max-width: 1000px){
 	.main{
 		height:500px; padding-top: 50px;
  	}
-	.baraja-demo{
+ 	.scrollbox{
+ 		width: 300px;
+ 		padding: 0;
+ 	}
+ 	.branch-demo{
+ 		margin-top: 0;
+ 	}
+	.scrollbox li{
 		width:200px;
+		height: 300px;
+		margin: 0 10px;
 	}
-	ul.baraja-container{
-		width: 200px; height:310px;
-	}
-	.baraja-demo ul.baraja-container li h4{
+	.scrollbox li h4{
 		font-size: 16px;
 	}
-	.baraja-demo ul.baraja-container li p{
+	.scrollbox li p{
 		font-size: 13px;
 		line-height: 2;
+	}
+	.finished{
+		margin-top: -300px;
 	}
 	.button-line{
 		font-size: 16px;
@@ -165,7 +180,7 @@ ul.baraja-container{
 }
 
 .time-modal{
-	width:400px; height:50px; margin: 0 auto;
+	width:400px; height:50px; margin: 0 auto; 
 }
 .time{
 	float: left; font-size: 30px; 
@@ -185,13 +200,13 @@ ul.baraja-container{
 }
 @media(max-width: 991px){
 	.section-txt{
-		padding-top: 20px; padding-bottom: 20px;
+		padding-top: 20px; padding-bottom: 20px; height: auto;
 	}
 	.step-num{
-		margin: 0 auto; margin-bottom: 30px;
+		margin: 0 auto; margin-bottom: 10px; width: 50px; font-size: 30px; line-height: 39px;
 	}
 	.step-img{
-		width: 80%; margin: 0 auto; margin-top: 60px;
+		display: none;
 	}
 	.step-content{
 		height: 300px;
@@ -208,6 +223,12 @@ ul.baraja-container{
 	.content-p{
 		font-size: 12px;
 	}
+	.time-modal{
+		padding-left: 20px;
+	}
+	.step-txt .col-md-8{
+		padding-left: 0px;
+	}
 }
 .section-audio{
 	width: 100%; height: 500px; background-color: #333333; padding-top: 50px; padding-bottom: 50px;
@@ -221,20 +242,3 @@ ul.baraja-container{
 .learn-content img,.learn-content audio,.learn-content video{
 	width: 100%; margin: 10px 0;
 }
-
-@media (max-width: 768px) {
-	.well-com,.step-img{
-		display:none;
-	}
-	#header{
-	width: 100%; background: url("../img/bg2.jpg") no-repeat; background-size: 100% auto;  
-}
-}
-
-.well-com{
-	display:none;
-}
-	
-	#header{
-	width: 100%; background: url("../img/bg2.jpg") no-repeat; background-size: 100% auto;  
-	}

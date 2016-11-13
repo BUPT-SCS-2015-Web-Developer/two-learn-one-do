@@ -24,9 +24,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="css/baraja.css" />
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" type="text/css" href="css/sweetalert.css" />
 	<!-- video -->
 	<script src="js/jquery.js"></script>
 	<script src="js/mediaelement-and-player.min.js"></script>
+	 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<link rel="stylesheet" href="css/mediaelementplayer.min.css">
 	<!-- modal -->
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -38,7 +41,9 @@
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+  	<script src="js/sweetalert-dev.js"></script>
   	<script src="js/self-learn.js"></script>
+  	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script>
 		$(function(){
 			var stepnumwidth=$(".step-num").width();
@@ -83,10 +88,24 @@
 	<div class="header-section" id="header">
 		<div class="well-com"><img src="img/self-learn.png" style="width:100%" alt=""></div>
 	</div>
+	<script>
+		(function($){
+			$(window).load(function(){
+				
+				$.mCustomScrollbar.defaults.theme="light-2"; //set "light-2" as the default theme
+				
+				$(".scrollbox").mCustomScrollbar({
+					axis:"x",
+					advanced:{autoExpandHorizontalScroll:true}
+				});
+		
+			});
+		})(jQuery);
+	</script>
 	<div class="contain">		
 		<section class="main">
-			<div class="baraja-demo center">
-				<ul id="baraja-el" class="baraja-container">
+			<div class="branch-demo center">
+				<ul id="branch-el" class="scrollbox">
 					<?php
 						try{
 							$alllist=$DBH->prepare('SELECT * FROM learn_list order by step_id ASC');
@@ -99,7 +118,7 @@
 							//var_dump($list);
 							foreach($list as $onestep){?>
 								<li>
-									<img src="img/3.jpg" alt="image1"/>
+									<img src="img/3.jpg" alt="image1" style="width:100%; height:auto"/>
 									<h4 class="feature-title color-scheme listindex" id="list-<?=$i?>">第<?=$i?>个学习阶段</h4>
 									<p class="feature-text">
 										<?php echo $onestep['title'];?>
@@ -125,7 +144,7 @@
 								}
 								if($ft['time']>=$st['time']){
 								?>
-								<img src="img/finished.png" class="finished" alt="">
+								<img src="img/finished.png" class="finished" style="width:100%; height:auto;" alt="">
 							<?php
 							}
 							?>
@@ -143,51 +162,9 @@
 				</ul>
 			</div>
 			<a name="idd"></a>
-			<nav class="actions light">
-				<span id="nav-prev" class="glyphicon glyphicon-arrow-left"></span>
-				<span id="close" class="glyphicon glyphicon-resize-small"></span>
-				<span id="open" class="glyphicon glyphicon-resize-full"></span>
-				<span id="nav-next" class="glyphicon glyphicon-arrow-right"></span>	
-			</nav>
+			
 		</section>			
     </div>
-    <script type="text/javascript" src="js/jquery.baraja.js"></script>
-    <script type="text/javascript">	
-		$(function() {
-
-			var $el = $( '#baraja-el' ),
-				baraja = $el.baraja();
-
-			// navigation
-			$( '#nav-prev' ).on( 'click', function( event ) {
-
-				baraja.previous();
-			
-			} );
-
-			$( '#nav-next' ).on( 'click', function( event ) {
-
-				baraja.next();
-			
-			} );
-			$( '#close' ).on( 'click', function( event ) {
-
-				baraja.close();
-			
-			} );
-			$('#open').on('click',function(event){
-				baraja.fan( {
-					speed : 500,
-					easing : 'ease-out',
-					range : 60,
-					direction : 'right',
-					origin : { x : 50, y : 200 },
-					center : true
-				} );
-			})
-			
-		});
-	</script>
 
 	<!-- txt-self-learn -->
 	  <?php if($step_id!=0){//说明进入了学习阶段
@@ -212,7 +189,13 @@
 				}
 				
 					if(intval($ft['time'])<intval($st['time'])){
-						die("请先完成上一个阶段的学习");
+						?>
+						<script>
+						swal("警告！", "请先完成上一阶段的学习!", "error");
+						</script>
+						
+						<?php
+						die();
 					}
 			}
 		
