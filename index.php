@@ -40,12 +40,51 @@ $_SESSION['name']	= "abcd";//$userInfo["info"]['yb_username'];
 		<div class="content">
 			<div class="jumpton">
 				<img src="img/pictitle.jpg" class="jumptonlg"  style="height:'100%'">
-				<img src="img/loginphone.jpg" class="jumptonxs" style="height:'100%'" >
-			</div>	
+			 <img src="img/loginphone.jpg" class="jumptonxs" style="height:'100%'" > 
 			
+			</div>	
 		</div>
 		<div class="line">
 			<div class="row row2">
+			<div class="col-md-3"></div>
+			<div class="col-md-3">
+			<div class="btn-group">
+			    <div class="btn-group">
+					 <button type="button" class="btn btn-lg btn-danger "  onclick=""> <div class="last">“学”</div></button>
+					 <button type="button" class="btn btn-danger  btn-lg dropdown-toggle appendix" data-toggle="dropdown">
+				     <span class="caret"></span>
+					    <span class="sr-only">Toggle Dropdown</span>
+					  </button>
+					  <ul class="dropdown-menu" role="menu">
+					    <li><a href="#" onclick="window.location.href='done-count.php'">自主学习</a></li>
+					    <li><a href="#" onclick="window.location.href='wrong-repository.php'">开始答题</a></li>
+						<li><a href="#" onclick="window.location.href='done-count.php'">累计答题</a></li>
+					    <li><a href="#" onclick="window.location.href='wrong-repository.php'">错题库</a></li>
+					   
+					</ul>
+				</div>
+			</div>
+			</div>
+			
+			<div class="col-md-3">
+			<div class="btn-group">
+					 <button type="button" class="btn btn-lg btn-danger "  onclick=""> <div class="last">“做”</div></button>
+					 <button type="button" class="btn btn-danger  btn-lg dropdown-toggle appendix" data-toggle="dropdown">
+				     <span class="caret"></span>
+					    <span class="sr-only">Toggle Dropdown</span>
+					  </button>
+					  <ul class="dropdown-menu" role="menu">
+					    
+					    <li><a href="#" onclick="window.location.href='self-evaluation.php'">每周自评</a></li>
+						<li><a href="#" onclick="window.location.href='evaluation-result.php'">自评结果</a></li>
+						<li><a href="#" onclick="window.location.href='evaluation-result.php'">撰写心得</a></li>
+						 <li><a href="#" onclick="window.location.href='self-evaluation.php'">查看心得</a></li>
+						 <li><a href="#" onclick="window.location.href='self-evaluation.php'">我的心得</a></li>
+					</ul>
+				</div>
+				</div>
+			<div class="col-md-3"></div>
+			<!--
 			<div class="col-md-3"></div>
 				<div class="col-md-2">
 					<div class="btn-group">
@@ -73,6 +112,7 @@ $_SESSION['name']	= "abcd";//$userInfo["info"]['yb_username'];
 					</div>
 				</div>
 				<div class="col-md-3"></div>
+				-->
 			</div>	
 		</div>
 	</div>
