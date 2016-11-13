@@ -1,3 +1,14 @@
+<?php
+    session_start();
+	header("Content-Type:text/html;charset=utf8");
+	if(!isset($_SESSION['token'])||!isset($_SESSION['usrid'])||!isset($_SESSION['name'])){
+        exit('illegal access!');
+	}else{
+	$user_id=$_SESSION['usrid'];
+	$nickname=$_SESSION['name'];
+	}
+	include("connect.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -19,17 +30,37 @@
     <div style="background-color:#FF1520">
         <div class="container">
             <!--循环此处即可-->
+			<?php
+			try{	
+		        $get_sxhb=$DBH->prepare("select * from thought_report");	
+		        $get_sxhb->execute();
+				$sxhbs=$get_sxhb->fetchAll(PDO::FETCH_ASSOC);
+	        }catch(PDOException $e){
+		        die($e->getMessage());
+	        }
+			$nums=count($sxhbs);
+			for($i=0;$i<$nums;$i++){
+			?>
             <div class="row"style="background-color:white">
                 <div class="col s12 m12">
                     <div class="card-panel red">
                         <span class="white-text"><!--此处为文本内容-->
+						<pre><?php echo $sxhbs[$i]['content'];
+						?>
+						</pre>
                         </span>
+						<span><?=$sxhbs[$i]['time']?></span>
+						<span>&nbsp &nbsp &nbsp &nbsp    by <?=$sxhbs[$i]['yb_nickname']?></span>
+						
                     </div>
                 </div>
             </div>
+			<?php
+			}
+			?>
             <!--循环此处即可-->
-            <a class="waves-effect waves-light btn  col s2 offset-s10 red" href="./sxhb.html">返回首页</a>
-            <a class="waves-effect waves-light btn  col s2 offset-s10 red" href="./mine.html">查看我的心得</a>
+            <a class="waves-effect waves-light btn  col s2 offset-s10 red" href="./sxhb.html">我要写心得</a>
+            <a class="waves-effect waves-light btn  col s2 offset-s10 red" href="./mine.php">查看我的心得</a>
         </div>
     </div>
     <footer class="page-footer red accent-4"></footer>
