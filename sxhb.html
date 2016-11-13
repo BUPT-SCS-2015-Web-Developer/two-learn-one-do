@@ -31,7 +31,7 @@
                 </form>
             </div>
             <a class="waves-effect waves-light btn  col s2 offset-s10 red " href="./canguan.html">参观</a>
-            <button class="btn waves-effect waves-light col s2 offset-s10 red" type="submit" name="action">提交
+            <button class="btn waves-effect waves-light col s2 offset-s10 red" type="submit" id="action" name="action">提交
             </button>
             
         </div>
@@ -42,5 +42,25 @@
     <script src="js/jquery-2.1.1.min.js"></script> 
     <script type="text/javascript" src="js/jquery.cookie-1.4.1.min.js"></script> 
     <script  src="js/materialize.min.js"></script>
+	<script>
+	$("#action").click(function(){
+		$.ajax({
+			type:'POST',
+			asyn:false,
+			url:"commitsxhb.php",
+			data:{
+				text:$("#textarea1").val(),
+			},
+			datatype:'text/html',
+			success:function(msg){
+				if(msg=="success"){
+					alert("提交成功！");
+					location.href="canguan.html";
+				}
+			}
+		})
+		console.log($("#textarea1").val());
+	})
+	</script>
 </body>
 </html>
